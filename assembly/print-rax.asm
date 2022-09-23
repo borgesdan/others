@@ -45,7 +45,7 @@ _start:
 	mov rax, 1	;syscall para colocar um endline '\n'
 	mov rdi, 1
 	mov rsi, endline
-	mov rdx, 14
+	mov rdx, 1
 	syscall
 
 	mov rax, 60
