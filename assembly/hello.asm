@@ -11,4 +11,8 @@ _start:
 	mov rdi, 1		;argumento #1 em rdi: onde escrever (descritor)?
 	mov rsi, message	;argumento #2 em rsi: onde começa a string?
 	mov rdx, 14		;argumento #3 em rdx: quantos bytes devem ser escritos?
-	syscall			;chamada de sistema
+	syscall
+
+	mov rax, 60		;chamada de saída
+	xor rdi, rdi		;valor de retorno do programa, 0
+	syscall
