@@ -14,13 +14,14 @@ _start:
 	mov rdi, 1
 	mov rdx, 1
 	mov rcx, 64
-	; cada 4 bits devem ser exibidos como um dígito hexadecimal
+	; cada 4 (ou 8)  bits devem ser exibidos como um dígito hexadecimal
 	; use o deslocamento (shift) e a operação bit a bit AND para  isolá-los
 	; o resultado é o offset no array 'codes'
 
 .loop:
 	push rax
-	sub rcx, 4
+	sub rcx, 8	; quantidade de bit a ser subtraído de rcx (4 ou 8)
+	; se 4 bits exibe 1122334455667788, se 8 bits 12345678
 	; cl é um registrador, a parte menor de rcx
 	; rax -- eax -- ax -- ah + al
 	; rcx -- ecx -- cx -- ch + cl
